@@ -17,3 +17,8 @@ It includes menu management, table booking, user authentication, and automated t
 - Django REST Framework  
 - MySQL  
 - Insomnia (API testing).
+
+## API Paths
+auth/token/login
+restaurant/menu
+restaurant/booking/tables
