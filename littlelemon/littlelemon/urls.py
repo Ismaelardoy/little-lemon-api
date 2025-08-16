@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from restaurant.views import BookingViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 router = DefaultRouter()
 router.register(r'tables', BookingViewSet)
@@ -26,4 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')),  # Include restaurant app URLs
     path('restaurant/booking/', include(router.urls)),  # Include API routes for tables
+    path('auth/', include('djoser.urls')),  # Include API authentication URLs
+    path('auth/', include('djoser.urls.authtoken')),  # Include token authentication URLs
+    path('api-token-auth/', obtain_auth_token)
 ]
